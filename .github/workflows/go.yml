@@ -8,12 +8,12 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest #${{ matrix.os }}
     
-    strategy:
-      matrix:
-        go_version: ['1.18', '1.19', '1.20']  # Fixed: Use specific versions
-        os: ['ubuntu-latest', 'ubuntu-22.04']  # ubuntu-18.04 is deprecated
+#    strategy:
+#      matrix:
+#        go_version: ['1.18', '1.19', '1.20']  # Fixed: Use specific versions
+#        os: ['ubuntu-latest', 'ubuntu-22.04']  # ubuntu-18.04 is deprecated
 
     services:
       postgres:
@@ -83,6 +83,13 @@ jobs:
     - name: Build
       run: go build -v ./...  # Fixed: Use ./... instead of main.go
 
+#NOVO CÓDIGO
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v6.0.0
+      with:
+        name: programa
+        path: main
+        
   docker:
     needs: build 
     uses: ./.github/workflows/Docker.yml
