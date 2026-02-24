@@ -25,5 +25,5 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: dsgomespl/go_ci:v1
+        tags: dsgomespl/prjct_golng:v1
         #{{github.ref_name}}
