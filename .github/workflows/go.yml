@@ -10,10 +10,10 @@ jobs:
   test:
     runs-on: ubuntu-latest #${{ matrix.os }}
     
-#    strategy:
-#      matrix:
-#        go_version: ['1.18', '1.19', '1.20']  # Fixed: Use specific versions
-#        os: ['ubuntu-latest', 'ubuntu-22.04']  # ubuntu-18.04 is deprecated
+    strategy:
+      matrix:
+        go_version: ['1.18', '1.19', '1.20']  # Fixed: Use specific versions
+        os: ['ubuntu-latest', 'ubuntu-22.04']  # ubuntu-18.04 is deprecated
 
     services:
       postgres:
