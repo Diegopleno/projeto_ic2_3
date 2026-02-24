@@ -25,5 +25,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: dsgomespl/prjct_golng:v1
-        #{{github.ref_name}}
+        tags: dsgomespl/prjct_golng:${{github.ref_name}}
