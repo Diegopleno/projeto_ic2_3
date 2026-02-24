@@ -26,5 +26,3 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: dsgomespl/go_ci:{{github.ref_name}}
-        github-token: # optional, default is ${{ github.token }}
-          
