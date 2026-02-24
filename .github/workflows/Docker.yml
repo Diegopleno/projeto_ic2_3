@@ -16,5 +16,5 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3.7.0
       with:
-      username: dsgomespl
-      password: ${{ secrets.PASSWORD_DOCKER_HUB }}
+        username: dsgomespl
+        password: ${{ secrets.PASSWORD_DOCKER_HUB }}
