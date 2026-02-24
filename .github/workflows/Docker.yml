@@ -18,3 +18,13 @@ jobs:
       with:
         username: dsgomespl
         password: ${{ secrets.PASSWORD_DOCKER_HUB }}
+
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v6.19.2
+      with:   
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: dsgomespl/go_ci:{{github.ref_name}}
+        github-token: # optional, default is ${{ github.token }}
+          
